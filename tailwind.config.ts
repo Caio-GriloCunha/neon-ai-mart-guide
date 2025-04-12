@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cores customizadas para o totem
+				neon: {
+					blue: '#0ea5e9',
+					cyan: '#22d3ee',
+					green: '#10b981'
 				}
 			},
 			borderRadius: {
@@ -84,11 +91,40 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-neon': {
+					'0%, 100%': { 
+						opacity: '1',
+						transform: 'scale(1)',
+						boxShadow: '0 0 15px 0px var(--neon-color)'
+					},
+					'50%': { 
+						opacity: '0.85',
+						transform: 'scale(0.98)',
+						boxShadow: '0 0 25px 5px var(--neon-color)'
+					}
+				},
+				wave: {
+					'0%': { transform: 'scaleY(0.2)' },
+					'50%': { transform: 'scaleY(1)' },
+					'100%': { transform: 'scaleY(0.2)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'rotate-center': {
+					'0%': { transform: 'rotate(0)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-neon': 'pulse-neon 2s infinite',
+				'wave': 'wave 1.5s infinite',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'rotate-center': 'rotate-center 8s linear infinite'
 			}
 		}
 	},
